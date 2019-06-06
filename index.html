@@ -152,13 +152,14 @@
 					<form action="https://formspree.io/phil@street-electrical.co.uk" method="POST">
 						<div class="row gtr-uniform">
 							<div class="col-6 col-12-xsmall">
-								<input type="text" name="name" id="name" value="" placeholder="Your Name" />
+								<input required type="text" name="name" id="name" value="" placeholder="Your Name" />
 							</div>
 							<div class="col-6 col-12-xsmall">
-								<input type="email" name="email" id="email" value="" placeholder="Your Email" />
+								<input required type="email" name="email" id="email" value=""
+									placeholder="Your Email" />
 							</div>
 							<div class="col-12">
-								<select name="category" id="category">
+								<select name="category" id="category" required>
 									<option value="">- Pick a category -</option>
 									<option value="Lighting">Lighting</option>
 									<option value="Re-wiring">Re-wiring</option>
@@ -167,7 +168,7 @@
 								</select>
 							</div>
 							<div class="col-12">
-								<textarea name="message" id="message" placeholder="Enter your message"
+								<textarea required name="message" id="message" placeholder="Enter your message"
 									rows="6"></textarea>
 							</div>
 							<div class="col-12">
