@@ -26,7 +26,7 @@ class Index extends React.Component {
   render() {
     return (
       <Layout>
-        <Helmet title="Gatsby Starter - Stellar" />
+        <Helmet title="Street Electrical" />
 
         <Header />
 
@@ -41,144 +41,165 @@ class Index extends React.Component {
             <div className="spotlight">
               <div className="content">
                 <header className="major">
-                  <h2>Ipsum sed adipiscing</h2>
+                  <h2>About</h2>
                 </header>
                 <p>
-                  Sed lorem ipsum dolor sit amet nullam consequat feugiat
-                  consequat magna adipiscing magna etiam amet veroeros. Lorem
-                  ipsum dolor tempus sit cursus. Tempus nisl et nullam lorem
-                  ipsum dolor sit amet aliquam.
+                  Hello my name is Philip Street and I'm your local electrician.
+                  Give me a call today for a quote or send me an email using the
+                  below contact form.
                 </p>
-                <ul className="actions">
-                  <li>
-                    <Link to="/generic" className="button">
-                      Learn More
-                    </Link>
-                  </li>
-                </ul>
               </div>
-              <span className="image">
+              {/* <span className="image">
                 <img src={pic01} alt="" />
-              </span>
+              </span> */}
             </div>
           </section>
 
           <section id="first" className="main special">
             <header className="major">
-              <h2>Magna veroeros</h2>
+              <h2>Domestic Services</h2>
+              <p>
+                We cover all aspects of Domestic Electrical Work across Essex.
+              </p>
             </header>
             <ul className="features">
               <li>
-                <span className="icon major style1 fa-code"></span>
-                <h3>Ipsum consequat</h3>
+                <span className="icon major style1 fa-code-fork"></span>
+                <h3>Rewiring</h3>
                 <p>
-                  Sed lorem amet ipsum dolor et amet nullam consequat a feugiat
-                  consequat tempus veroeros sed consequat.
+                  Need a full rewire? We can do the job no matter if it's a
+                  small annex or a whole house.
                 </p>
               </li>
               <li>
-                <span className="icon major style3 fa-copy"></span>
-                <h3>Amed sed feugiat</h3>
+                <span className="icon major style3 fa-lightbulb-o"></span>
+                <h3>Lighting</h3>
                 <p>
-                  Sed lorem amet ipsum dolor et amet nullam consequat a feugiat
-                  consequat tempus veroeros sed consequat.
+                  We specialise in fitting spot lights as well as covering all
+                  other fittings including LED and filament.
                 </p>
               </li>
               <li>
-                <span className="icon major style5 fa-diamond"></span>
-                <h3>Dolor nullam</h3>
+                <span className="icon major style4 fa-warning"></span>
+                <h3>Diagnostics & Fault Finding</h3>
                 <p>
-                  Sed lorem amet ipsum dolor et amet nullam consequat a feugiat
-                  consequat tempus veroeros sed consequat.
+                  Wall socket stopped working? We can diagnose the issue in no
+                  time and give you a detailed report.
+                </p>
+              </li>
+              <li>
+                <span className="icon major style5 fa-cutlery"></span>
+                <h3>Kitchen & Bathroom Electrics</h3>
+                <p>
+                  Bought a new power shower? Need a shaving point fitted? No
+                  worries - we can do the job!
+                </p>
+              </li>
+              <li>
+                <span className="icon major style1 fa-plug"></span>
+                <h3>Sockets</h3>
+                <p>
+                  Want a USB port in your bedroom? Swapping out old sockets for
+                  new ones? Not a problem.
+                </p>
+              </li>
+              <li>
+                <span className="icon major style2 fa-bolt"></span>
+                <h3>Everything Else</h3>
+                <p>
+                  Any other electrical works can be carried out by our qualified
+                  team
                 </p>
               </li>
             </ul>
-            <footer className="major">
-              <ul className="actions">
-                <li>
-                  <Link to="/generic" className="button">
-                    Learn More
-                  </Link>
-                </li>
-              </ul>
-            </footer>
+            <footer className="major"></footer>
           </section>
 
           <section id="second" className="main special">
             <header className="major">
-              <h2>Ipsum consequat</h2>
+              <h2>Commercial Services</h2>
               <p>
-                Donec imperdiet consequat consequat. Suspendisse feugiat congue
-                <br />
-                posuere. Nulla massa urna, fermentum eget quam aliquet.
+                We cover all aspects of Commercial Electrical Work across Essex.
               </p>
             </header>
             <ul className="statistics">
               <li className="style1">
                 <span className="icon fa-code-fork"></span>
-                <strong>5,120</strong> Etiam
+                <strong>Installation</strong>
               </li>
               <li className="style2">
                 <span className="icon fa-folder-open-o"></span>
-                <strong>8,192</strong> Magna
+                <strong>Maintenance</strong>
               </li>
               <li className="style3">
                 <span className="icon fa-signal"></span>
-                <strong>2,048</strong> Tempus
+                <strong>Inspection</strong> & Testing
               </li>
               <li className="style4">
                 <span className="icon fa-laptop"></span>
-                <strong>4,096</strong> Aliquam
+                <strong>Lighting</strong>
               </li>
               <li className="style5">
                 <span className="icon fa-diamond"></span>
-                <strong>1,024</strong> Nullam
+                <strong>CCTV</strong>
               </li>
             </ul>
-            <p className="content">
-              Nam elementum nisl et mi a commodo porttitor. Morbi sit amet nisl
-              eu arcu faucibus hendrerit vel a risus. Nam a orci mi, elementum
-              ac arcu sit amet, fermentum pellentesque et purus. Integer maximus
-              varius lorem, sed convallis diam accumsan sed. Etiam porttitor
-              placerat sapien, sed eleifend a enim pulvinar faucibus semper quis
-              ut arcu. Ut non nisl a mollis est efficitur vestibulum. Integer
-              eget purus nec nulla mattis et accumsan ut magna libero. Morbi
-              auctor iaculis porttitor. Sed ut magna ac risus et hendrerit
-              scelerisque. Praesent eleifend lacus in lectus aliquam porta. Cras
-              eu ornare dui curabitur lacinia.
-            </p>
-            <footer className="major">
-              <ul className="actions">
-                <li>
-                  <Link to="/generic" className="button">
-                    Learn More
-                  </Link>
-                </li>
-              </ul>
-            </footer>
+            <footer className="major"></footer>
           </section>
 
           <section id="cta" className="main special">
             <header className="major">
-              <h2>Congue imperdiet</h2>
+              <h2>Contact</h2>
               <p>
-                Donec imperdiet consequat consequat. Suspendisse feugiat congue
-                <br />
-                posuere. Nulla massa urna, fermentum eget quam aliquet.
+                We're available for a free no obligation quote 24 hours a day, 7
+                days a week!
               </p>
             </header>
+
+            {/* <section class="main special">
+              <h2>Contact Form</h2>
+              <form action="https://formspree.io/phil@street-electrical.co.uk" method="POST">
+                <div>
+                  <div>
+                    <input required type="text" name="name" id="name" value="" placeholder="Your Name" />
+                  </div>
+                  <br />
+                  <div>
+                    <input required type="email" name="email" id="email" value=""
+                      placeholder="Your Email" />
+                  </div>
+                  <br />
+                  <div>
+                    <select name="category" id="category" required>
+                      <option value="">- Pick a category -</option>
+                      <option value="Lighting">Lighting</option>
+                      <option value="Re-wiring">Re-wiring</option>
+                      <option value="Sockets">Sockets</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  <br />
+                  <div>
+                    <textarea required name="message" id="message" placeholder="Enter your message"
+                      rows="6"></textarea>
+                  </div>
+                  <br />
+                  <div>
+                    <ul class="actions">
+                      <li><input type="submit" value="Send Message" class="primary" /></li>
+                      <li><input type="reset" value="Reset" /></li>
+                    </ul>
+                  </div>
+                </div>
+              </form>
+            </section> */}
+
             <footer className="major">
-              <ul className="actions">
-                <li>
-                  <Link to="/generic" className="button special">
-                    Get Started
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/generic" className="button">
-                    Learn More
-                  </Link>
-                </li>
+              <ul class="icons">
+                <h2>
+                  Call Street Electrical on{' '}
+                  <a href="tel:07896748201">07896748201</a>
+                </h2>
               </ul>
             </footer>
           </section>

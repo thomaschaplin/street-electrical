@@ -1,8 +1,9 @@
 {
-  "name": "gatsby-starter-stellar",
-  "description": "Gatsby Starter - Stellar by HTML5 UP",
+  "name": "street-electrical",
+  "description": "Street Electrical",
   "version": "1.0.0",
-  "author": "Hunter Chang",
+  "author": "Thomas Chaplin",
+  "homepage": "https://www.street-electrical.co.uk",
   "dependencies": {
     "gatsby": "^2.15.14",
     "gatsby-plugin-manifest": "^2.2.16",
@@ -25,13 +26,15 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gatsby clean && gatsby build && gh-pages -d public"
   },
   "devDependencies": {
+    "gh-pages": "^2.2.0",
     "prettier": "^1.18.2"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/thomaschaplin/street-electrical"
   }
 }
