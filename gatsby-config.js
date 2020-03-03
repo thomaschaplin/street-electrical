@@ -9,8 +9,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'Street Electrical',
+        short_name: 'street-electrical',
         start_url: '/',
         background_color: '#39403E',
         theme_color: '#39403E',
