@@ -40,13 +40,13 @@
           r
         )
       }
-      function i(e) {
+      function a(e) {
         e.handlers === e.nextHandlers && (e.nextHandlers = e.handlers.slice())
       }
-      function a(e) {
+      function i(e) {
         ;(this.target = e), (this.events = {})
       }
-      ;(a.prototype.getEventHandlers = function(e, t) {
+      ;(i.prototype.getEventHandlers = function(e, t) {
         var n,
           o =
             String(e) +
@@ -65,17 +65,17 @@
           this.events[o]
         )
       }),
-        (a.prototype.handleEvent = function(e, t, n) {
+        (i.prototype.handleEvent = function(e, t, n) {
           var o = this.getEventHandlers(e, t)
           ;(o.handlers = o.nextHandlers),
             o.handlers.forEach(function(e) {
               e && e(n)
             })
         }),
-        (a.prototype.add = function(e, t, n) {
+        (i.prototype.add = function(e, t, n) {
           var o = this,
             r = this.getEventHandlers(e, n)
-          i(r),
+          a(r),
             0 === r.nextHandlers.length &&
               ((r.handleEvent = this.handleEvent.bind(this, e, n)),
               this.target.addEventListener(e, r.handleEvent, n)),
@@ -83,9 +83,9 @@
           var l = !0
           return function() {
             if (l) {
-              ;(l = !1), i(r)
-              var a = r.nextHandlers.indexOf(t)
-              r.nextHandlers.splice(a, 1),
+              ;(l = !1), a(r)
+              var i = r.nextHandlers.indexOf(t)
+              r.nextHandlers.splice(i, 1),
                 0 === r.nextHandlers.length &&
                   (o.target &&
                     o.target.removeEventListener(e, r.handleEvent, n),
@@ -95,7 +95,7 @@
         })
       function s(e, t, n, o) {
         e.__consolidated_events_handlers__ ||
-          (e.__consolidated_events_handlers__ = new a(e))
+          (e.__consolidated_events_handlers__ = new i(e))
         var r = (function(e) {
           if (e) return l() ? e : !!e.capture
         })(o)
@@ -190,12 +190,12 @@
     RXBc: function(e, t, n) {
       'use strict'
       n.r(t)
-      n('Wbzz')
+      n('f3/d'), n('Wbzz')
       var o = n('q1tI'),
         r = n.n(o),
         l = n('TJpk'),
-        i = n.n(l),
-        a = n('uuth'),
+        a = n.n(l),
+        i = n('uuth'),
         s = (n('ILy0'), n('40cp')),
         c = n.n(s),
         u = function(e) {
@@ -211,11 +211,11 @@
             r.a.createElement('p', null, 'Professional Electrician')
           )
         },
-        f = n('Bl7J'),
-        p = n('YIkO'),
-        d = n.n(p),
-        m = n('dwco'),
-        h = n.n(m)
+        p = n('Bl7J'),
+        f = n('YIkO'),
+        m = n.n(f),
+        d = n('dwco'),
+        h = n.n(d)
       var v = function(e) {
           return e.children
         },
@@ -252,8 +252,8 @@
                 o = this.props,
                 r = o.type,
                 l = o.element,
-                i = o.offset,
-                a = o.timeout
+                a = o.offset,
+                i = o.timeout
               if (r && l)
                 switch (r) {
                   case 'class':
@@ -263,7 +263,7 @@
                     n = !!(t = document.getElementById(l))
                 }
               n
-                ? this.scrollTo(t, i, a)
+                ? this.scrollTo(t, a, i)
                 : console.log('Element not found: ' + l)
             }),
             (l.scrollTo = function(e, t, n) {
@@ -293,12 +293,12 @@
             o
           )
         })(r.a.Component),
-        w = function(e) {
+        E = function(e) {
           return r.a.createElement(
             'nav',
             { id: 'nav', className: e.sticky ? 'alt' : '' },
             r.a.createElement(
-              d.a,
+              m.a,
               {
                 items: ['intro', 'first', 'second', 'cta'],
                 currentClassName: 'is-active',
@@ -343,7 +343,7 @@
             )
           )
         }
-      var b = (function(e) {
+      var g = (function(e) {
         var t, n
         function o(t) {
           var n
@@ -358,6 +358,12 @@
                 return { stickyNav: !0 }
               })
             }),
+            (n.handleChange = function(e) {
+              return function(t) {
+                var o
+                n.setState((((o = {})[e] = t.target.value), o))
+              }
+            }),
             (n.state = { stickyNav: !1 }),
             n
           )
@@ -369,15 +375,15 @@
           (t.__proto__ = n),
           (o.prototype.render = function() {
             return r.a.createElement(
-              f.a,
+              p.a,
               null,
-              r.a.createElement(i.a, { title: 'Street Electrical' }),
+              r.a.createElement(a.a, { title: 'Street Electrical' }),
               r.a.createElement(u, null),
-              r.a.createElement(a.a, {
+              r.a.createElement(i.a, {
                 onEnter: this._handleWaypointEnter,
                 onLeave: this._handleWaypointLeave,
               }),
-              r.a.createElement(w, { sticky: this.state.stickyNav }),
+              r.a.createElement(E, { sticky: this.state.stickyNav }),
               r.a.createElement(
                 'div',
                 { id: 'main' },
@@ -578,7 +584,121 @@
                     r.a.createElement(
                       'p',
                       null,
-                      "We're available for a free no obligation quote 24 hours a day, 7 days a week!"
+                      "We're available for a free no obligation quote!"
+                    )
+                  ),
+                  r.a.createElement(
+                    'section',
+                    { class: 'main special' },
+                    r.a.createElement('h2', null, 'Contact Form'),
+                    r.a.createElement(
+                      'form',
+                      {
+                        action:
+                          'https://formspree.io/phil@street-electrical.co.uk',
+                        method: 'POST',
+                      },
+                      r.a.createElement(
+                        'div',
+                        null,
+                        r.a.createElement(
+                          'div',
+                          null,
+                          r.a.createElement('input', {
+                            required: !0,
+                            type: 'text',
+                            name: 'name',
+                            id: 'name',
+                            value: this.state.name,
+                            placeholder: 'Your Name',
+                            onChange: this.handleChange('name'),
+                          })
+                        ),
+                        r.a.createElement('br', null),
+                        r.a.createElement(
+                          'div',
+                          null,
+                          r.a.createElement('input', {
+                            required: !0,
+                            type: 'email',
+                            name: 'email',
+                            id: 'email',
+                            value: this.state.email,
+                            placeholder: 'Your Email',
+                            onChange: this.handleChange('email'),
+                          })
+                        ),
+                        r.a.createElement('br', null),
+                        r.a.createElement(
+                          'div',
+                          null,
+                          r.a.createElement(
+                            'select',
+                            {
+                              name: 'category',
+                              id: 'category',
+                              required: !0,
+                              onChange: this.handleChange('option'),
+                            },
+                            r.a.createElement(
+                              'option',
+                              { value: this.state.option },
+                              '- Pick a category -'
+                            ),
+                            r.a.createElement(
+                              'option',
+                              { value: 'Lighting' },
+                              'Lighting'
+                            ),
+                            r.a.createElement(
+                              'option',
+                              { value: 'Re-wiring' },
+                              'Re-wiring'
+                            ),
+                            r.a.createElement(
+                              'option',
+                              { value: 'Sockets' },
+                              'Sockets'
+                            ),
+                            r.a.createElement(
+                              'option',
+                              { value: 'Other' },
+                              'Other'
+                            )
+                          )
+                        ),
+                        r.a.createElement('br', null),
+                        r.a.createElement(
+                          'div',
+                          null,
+                          r.a.createElement('textarea', {
+                            required: !0,
+                            name: 'message',
+                            id: 'message',
+                            placeholder: 'Enter your message',
+                            rows: '6',
+                            onChange: this.handleChange('message'),
+                          })
+                        ),
+                        r.a.createElement('br', null),
+                        r.a.createElement(
+                          'div',
+                          null,
+                          r.a.createElement(
+                            'ul',
+                            { class: 'actions' },
+                            r.a.createElement(
+                              'li',
+                              null,
+                              r.a.createElement('input', {
+                                type: 'submit',
+                                value: 'Send Message',
+                                class: 'primary',
+                              })
+                            )
+                          )
+                        )
+                      )
                     )
                   ),
                   r.a.createElement(
@@ -607,7 +727,7 @@
           o
         )
       })(r.a.Component)
-      t.default = b
+      t.default = g
     },
     SksO: function(e, t) {
       function n(t, o) {
@@ -639,10 +759,10 @@
                 var l = typeof o
                 if ('string' === l || 'number' === l) e.push(o)
                 else if (Array.isArray(o) && o.length) {
-                  var i = r.apply(null, o)
-                  i && e.push(i)
+                  var a = r.apply(null, o)
+                  a && e.push(a)
                 } else if ('object' === l)
-                  for (var a in o) n.call(o, a) && o[a] && e.push(a)
+                  for (var i in o) n.call(o, i) && o[i] && e.push(i)
               }
             }
             return e.join(' ')
@@ -677,22 +797,22 @@
         (t.default = void 0)
       var r = o(n('pVnL')),
         l = o(n('lSNA')),
-        i = o(n('RIqP')),
-        a = o(n('lwsE')),
+        a = o(n('RIqP')),
+        i = o(n('lwsE')),
         s = o(n('a1gu')),
         c = o(n('Nsbk')),
         u = o(n('PJYZ')),
-        f = o(n('W8MJ')),
-        p = o(n('7W2i')),
-        d = o(n('17x9')),
-        m = o(n('q1tI')),
+        p = o(n('W8MJ')),
+        f = o(n('7W2i')),
+        m = o(n('17x9')),
+        d = o(n('q1tI')),
         h = o(n('TSYQ')),
         v = o(n('Fxm3'))
       var y = (function(e) {
         function t(e) {
           var n
           return (
-            (0, a.default)(this, t),
+            (0, i.default)(this, t),
             ((n = (0, s.default)(
               this,
               (0, c.default)(t).call(this, e)
@@ -706,23 +826,23 @@
           )
         }
         return (
-          (0, p.default)(t, e),
-          (0, f.default)(t, null, [
+          (0, f.default)(t, e),
+          (0, p.default)(t, null, [
             {
               key: 'propTypes',
               get: function() {
                 return {
-                  items: d.default.arrayOf(d.default.string).isRequired,
-                  currentClassName: d.default.string.isRequired,
-                  scrolledPastClassName: d.default.string,
-                  style: d.default.object,
-                  componentTag: d.default.oneOfType([
-                    d.default.string,
-                    d.default.element,
+                  items: m.default.arrayOf(m.default.string).isRequired,
+                  currentClassName: m.default.string.isRequired,
+                  scrolledPastClassName: m.default.string,
+                  style: m.default.object,
+                  componentTag: m.default.oneOfType([
+                    m.default.string,
+                    m.default.element,
                   ]),
-                  offset: d.default.number,
-                  rootEl: d.default.string,
-                  onUpdate: d.default.func,
+                  offset: m.default.number,
+                  rootEl: m.default.string,
+                  onUpdate: m.default.func,
                 }
               },
             },
@@ -740,7 +860,7 @@
               },
             },
           ]),
-          (0, f.default)(t, [
+          (0, p.default)(t, [
             {
               key: '_initSpyTarget',
               value: function(e) {
@@ -790,23 +910,23 @@
                     o = [],
                     r = e || this.state.targetItems,
                     l = !1,
-                    a = 0,
+                    i = 0,
                     s = r.length;
-                  a < s;
-                  a++
+                  i < s;
+                  i++
                 ) {
-                  var c = r[a],
+                  var c = r[i],
                     u = !l && this._isInView(c)
                   u ? ((l = !0), t.push(c)) : n.push(c)
-                  var f = a === s - 1,
-                    p = this._isScrolled()
+                  var p = i === s - 1,
+                    f = this._isScrolled()
                   this._isAtBottom() &&
                     this._isInView(c) &&
                     !u &&
-                    f &&
                     p &&
+                    f &&
                     (n.pop(),
-                    n.push.apply(n, (0, i.default)(t)),
+                    n.push.apply(n, (0, a.default)(t)),
                     (t = [c]),
                     (o = this._fillArray(o, !1)),
                     (u = !0)),
@@ -832,12 +952,12 @@
                   r = n.offset
                 o && (t = document.querySelector(o).getBoundingClientRect())
                 var l = e.getBoundingClientRect(),
-                  i = o ? t.height : window.innerHeight,
-                  a = this._getScrollDimension().scrollTop,
-                  s = a + i,
-                  c = o ? l.top + a - t.top + r : l.top + a + r,
+                  a = o ? t.height : window.innerHeight,
+                  i = this._getScrollDimension().scrollTop,
+                  s = i + a,
+                  c = o ? l.top + i - t.top + r : l.top + i + r,
                   u = c + e.offsetHeight
-                return c < s && u > a
+                return c < s && u > i
               },
             },
             {
@@ -959,15 +1079,15 @@
                   t = this.props.componentTag,
                   n = this.props,
                   o = n.children,
-                  i = n.className,
-                  a = n.scrolledPastClassName,
+                  a = n.className,
+                  i = n.scrolledPastClassName,
                   s = n.style,
                   c = 0,
-                  u = m.default.Children.map(o, function(t, n) {
+                  u = d.default.Children.map(o, function(t, n) {
                     var o
                     if (!t) return null
-                    var i = t.type,
-                      s = a && e.state.isScrolledPast[n],
+                    var a = t.type,
+                      s = i && e.state.isScrolledPast[n],
                       u = (0, h.default)(
                         ((o = {}),
                         (0, l.default)(
@@ -987,20 +1107,20 @@
                         ),
                         o)
                       )
-                    return m.default.createElement(
-                      i,
+                    return d.default.createElement(
+                      a,
                       (0, r.default)({}, t.props, { className: u, key: c++ }),
                       t.props.children
                     )
                   }),
-                  f = (0, h.default)((0, l.default)({}, ''.concat(i), i))
-                return m.default.createElement(t, { className: f, style: s }, u)
+                  p = (0, h.default)((0, l.default)({}, ''.concat(a), a))
+                return d.default.createElement(t, { className: p, style: s }, u)
               },
             },
           ]),
           t
         )
-      })(m.default.Component)
+      })(d.default.Component)
       t.default = y
     },
     a1gu: function(e, t, n) {
@@ -1051,14 +1171,14 @@
                   r = {
                     scroll: e.scroll || e.scrollTo,
                     scrollBy: e.scrollBy,
-                    elementScroll: o.prototype.scroll || a,
+                    elementScroll: o.prototype.scroll || i,
                     scrollIntoView: o.prototype.scrollIntoView,
                   },
                   l =
                     e.performance && e.performance.now
                       ? e.performance.now.bind(e.performance)
                       : Date.now,
-                  i =
+                  a =
                     ((n = e.navigator.userAgent),
                     new RegExp(['MSIE ', 'Trident/', 'Edge/'].join('|')).test(n)
                       ? 1
@@ -1066,7 +1186,7 @@
                 ;(e.scroll = e.scrollTo = function() {
                   void 0 !== arguments[0] &&
                     (!0 !== s(arguments[0])
-                      ? m.call(
+                      ? d.call(
                           e,
                           t.body,
                           void 0 !== arguments[0].left
@@ -1106,7 +1226,7 @@
                               ? arguments[1]
                               : 0
                           )
-                        : m.call(
+                        : d.call(
                             e,
                             t.body,
                             ~~arguments[0].left + (e.scrollX || e.pageXOffset),
@@ -1118,7 +1238,7 @@
                       if (!0 !== s(arguments[0])) {
                         var e = arguments[0].left,
                           t = arguments[0].top
-                        m.call(
+                        d.call(
                           this,
                           this,
                           void 0 === e ? this.scrollLeft : ~~e,
@@ -1165,11 +1285,11 @@
                   }),
                   (o.prototype.scrollIntoView = function() {
                     if (!0 !== s(arguments[0])) {
-                      var n = p(this),
+                      var n = f(this),
                         o = n.getBoundingClientRect(),
                         l = this.getBoundingClientRect()
                       n !== t.body
-                        ? (m.call(
+                        ? (d.call(
                             this,
                             n,
                             n.scrollLeft + l.left - o.left,
@@ -1193,7 +1313,7 @@
                       )
                   })
               }
-              function a(e, t) {
+              function i(e, t) {
                 ;(this.scrollLeft = e), (this.scrollTop = t)
               }
               function s(e) {
@@ -1214,58 +1334,58 @@
               }
               function c(e, t) {
                 return 'Y' === t
-                  ? e.clientHeight + i < e.scrollHeight
+                  ? e.clientHeight + a < e.scrollHeight
                   : 'X' === t
-                  ? e.clientWidth + i < e.scrollWidth
+                  ? e.clientWidth + a < e.scrollWidth
                   : void 0
               }
               function u(t, n) {
                 var o = e.getComputedStyle(t, null)['overflow' + n]
                 return 'auto' === o || 'scroll' === o
               }
-              function f(e) {
+              function p(e) {
                 var t = c(e, 'Y') && u(e, 'Y'),
                   n = c(e, 'X') && u(e, 'X')
                 return t || n
               }
-              function p(e) {
-                for (; e !== t.body && !1 === f(e); ) e = e.parentNode || e.host
+              function f(e) {
+                for (; e !== t.body && !1 === p(e); ) e = e.parentNode || e.host
                 return e
               }
-              function d(t) {
+              function m(t) {
                 var n,
                   o,
                   r,
-                  i,
-                  a = (l() - t.startTime) / 468
-                ;(i = a = a > 1 ? 1 : a),
-                  (n = 0.5 * (1 - Math.cos(Math.PI * i))),
+                  a,
+                  i = (l() - t.startTime) / 468
+                ;(a = i = i > 1 ? 1 : i),
+                  (n = 0.5 * (1 - Math.cos(Math.PI * a))),
                   (o = t.startX + (t.x - t.startX) * n),
                   (r = t.startY + (t.y - t.startY) * n),
                   t.method.call(t.scrollable, o, r),
                   (o === t.x && r === t.y) ||
-                    e.requestAnimationFrame(d.bind(e, t))
+                    e.requestAnimationFrame(m.bind(e, t))
               }
-              function m(n, o, i) {
+              function d(n, o, a) {
                 var s,
                   c,
                   u,
-                  f,
-                  p = l()
+                  p,
+                  f = l()
                 n === t.body
                   ? ((s = e),
                     (c = e.scrollX || e.pageXOffset),
                     (u = e.scrollY || e.pageYOffset),
-                    (f = r.scroll))
-                  : ((s = n), (c = n.scrollLeft), (u = n.scrollTop), (f = a)),
-                  d({
+                    (p = r.scroll))
+                  : ((s = n), (c = n.scrollLeft), (u = n.scrollTop), (p = i)),
+                  m({
                     scrollable: s,
-                    method: f,
-                    startTime: p,
+                    method: p,
+                    startTime: f,
                     startX: c,
                     startY: u,
                     x: o,
-                    y: i,
+                    y: a,
                   })
               }
             },
@@ -1287,38 +1407,38 @@
       var o = 'function' == typeof Symbol && Symbol.for,
         r = o ? Symbol.for('react.element') : 60103,
         l = o ? Symbol.for('react.portal') : 60106,
-        i = o ? Symbol.for('react.fragment') : 60107,
-        a = o ? Symbol.for('react.strict_mode') : 60108,
+        a = o ? Symbol.for('react.fragment') : 60107,
+        i = o ? Symbol.for('react.strict_mode') : 60108,
         s = o ? Symbol.for('react.profiler') : 60114,
         c = o ? Symbol.for('react.provider') : 60109,
         u = o ? Symbol.for('react.context') : 60110,
-        f = o ? Symbol.for('react.async_mode') : 60111,
-        p = o ? Symbol.for('react.concurrent_mode') : 60111,
-        d = o ? Symbol.for('react.forward_ref') : 60112,
-        m = o ? Symbol.for('react.suspense') : 60113,
+        p = o ? Symbol.for('react.async_mode') : 60111,
+        f = o ? Symbol.for('react.concurrent_mode') : 60111,
+        m = o ? Symbol.for('react.forward_ref') : 60112,
+        d = o ? Symbol.for('react.suspense') : 60113,
         h = o ? Symbol.for('react.suspense_list') : 60120,
         v = o ? Symbol.for('react.memo') : 60115,
         y = o ? Symbol.for('react.lazy') : 60116,
-        w = o ? Symbol.for('react.fundamental') : 60117,
-        b = o ? Symbol.for('react.responder') : 60118,
-        E = o ? Symbol.for('react.scope') : 60119
-      function g(e) {
+        E = o ? Symbol.for('react.fundamental') : 60117,
+        g = o ? Symbol.for('react.responder') : 60118,
+        b = o ? Symbol.for('react.scope') : 60119
+      function w(e) {
         if ('object' == typeof e && null !== e) {
           var t = e.$$typeof
           switch (t) {
             case r:
               switch ((e = e.type)) {
-                case f:
                 case p:
-                case i:
-                case s:
+                case f:
                 case a:
-                case m:
+                case s:
+                case i:
+                case d:
                   return e
                 default:
                   switch ((e = e && e.$$typeof)) {
                     case u:
-                    case d:
+                    case m:
                     case y:
                     case v:
                     case c:
@@ -1333,31 +1453,31 @@
         }
       }
       function S(e) {
-        return g(e) === p
+        return w(e) === f
       }
-      ;(t.typeOf = g),
-        (t.AsyncMode = f),
-        (t.ConcurrentMode = p),
+      ;(t.typeOf = w),
+        (t.AsyncMode = p),
+        (t.ConcurrentMode = f),
         (t.ContextConsumer = u),
         (t.ContextProvider = c),
         (t.Element = r),
-        (t.ForwardRef = d),
-        (t.Fragment = i),
+        (t.ForwardRef = m),
+        (t.Fragment = a),
         (t.Lazy = y),
         (t.Memo = v),
         (t.Portal = l),
         (t.Profiler = s),
-        (t.StrictMode = a),
-        (t.Suspense = m),
+        (t.StrictMode = i),
+        (t.Suspense = d),
         (t.isValidElementType = function(e) {
           return (
             'string' == typeof e ||
             'function' == typeof e ||
-            e === i ||
-            e === p ||
-            e === s ||
             e === a ||
-            e === m ||
+            e === f ||
+            e === s ||
+            e === i ||
+            e === d ||
             e === h ||
             ('object' == typeof e &&
               null !== e &&
@@ -1365,48 +1485,48 @@
                 e.$$typeof === v ||
                 e.$$typeof === c ||
                 e.$$typeof === u ||
-                e.$$typeof === d ||
-                e.$$typeof === w ||
-                e.$$typeof === b ||
-                e.$$typeof === E))
+                e.$$typeof === m ||
+                e.$$typeof === E ||
+                e.$$typeof === g ||
+                e.$$typeof === b))
           )
         }),
         (t.isAsyncMode = function(e) {
-          return S(e) || g(e) === f
+          return S(e) || w(e) === p
         }),
         (t.isConcurrentMode = S),
         (t.isContextConsumer = function(e) {
-          return g(e) === u
+          return w(e) === u
         }),
         (t.isContextProvider = function(e) {
-          return g(e) === c
+          return w(e) === c
         }),
         (t.isElement = function(e) {
           return 'object' == typeof e && null !== e && e.$$typeof === r
         }),
         (t.isForwardRef = function(e) {
-          return g(e) === d
+          return w(e) === m
         }),
         (t.isFragment = function(e) {
-          return g(e) === i
+          return w(e) === a
         }),
         (t.isLazy = function(e) {
-          return g(e) === y
+          return w(e) === y
         }),
         (t.isMemo = function(e) {
-          return g(e) === v
+          return w(e) === v
         }),
         (t.isPortal = function(e) {
-          return g(e) === l
+          return w(e) === l
         }),
         (t.isProfiler = function(e) {
-          return g(e) === s
+          return w(e) === s
         }),
         (t.isStrictMode = function(e) {
-          return g(e) === a
+          return w(e) === i
         }),
         (t.isSuspense = function(e) {
-          return g(e) === m
+          return w(e) === d
         })
     },
     uuth: function(e, t, n) {
@@ -1419,8 +1539,8 @@
         var o = n('1TsT'),
           r = (n('17x9'), n('q1tI')),
           l = n.n(r),
-          i = n('TOwV')
-        function a(e, t) {
+          a = n('TOwV')
+        function i(e, t) {
           for (var n = 0; n < t.length; n++) {
             var o = t[n]
             ;(o.enumerable = o.enumerable || !1),
@@ -1454,7 +1574,7 @@
               })(e)
             : t
         }
-        function f(e, t) {
+        function p(e, t) {
           var n,
             o =
               ((n = e),
@@ -1469,26 +1589,26 @@
           })(e)
           return 'number' == typeof r ? r * t : void 0
         }
-        function p(e) {
+        function f(e) {
           return 'string' == typeof e.type
         }
-        var d
-        var m = []
+        var m
+        var d = []
         function h(e) {
-          m.push(e),
-            d ||
-              (d = setTimeout(function() {
+          d.push(e),
+            m ||
+              (m = setTimeout(function() {
                 var e
-                for (d = null; (e = m.shift()); ) e()
+                for (m = null; (e = d.shift()); ) e()
               }, 0))
           var t = !0
           return function() {
             if (t) {
               t = !1
-              var n = m.indexOf(e)
+              var n = d.indexOf(e)
               ;-1 !== n &&
-                (m.splice(n, 1),
-                !m.length && d && (clearTimeout(d), (d = null)))
+                (d.splice(n, 1),
+                !d.length && m && (clearTimeout(m), (m = null)))
             }
           }
         }
@@ -1518,7 +1638,7 @@
                 t
               )
             }
-            var r, d, m
+            var r, m, d
             return (
               (function(e, t) {
                 if ('function' != typeof t && null !== t)
@@ -1531,7 +1651,7 @@
                   t && c(e, t)
               })(n, t),
               (r = n),
-              (d = [
+              (m = [
                 {
                   key: 'componentDidMount',
                   value: function() {
@@ -1543,7 +1663,7 @@
                           n = t.children
                         t.debug,
                           (function(e, t) {
-                            if (e && !p(e) && !t)
+                            if (e && !f(e) && !t)
                               throw new Error(
                                 '<Waypoint> needs a DOM element to compute boundaries. The child you passed is neither a DOM element (e.g. <div>) nor does it use the innerRef prop.\n\nSee https://goo.gl/LrBNgw for more info.'
                               )
@@ -1600,12 +1720,12 @@
                     for (var r = this._ref; r.parentNode; ) {
                       if ((r = r.parentNode) === document.body) return window
                       var l = window.getComputedStyle(r),
-                        i =
+                        a =
                           (n
                             ? l.getPropertyValue('overflow-x')
                             : l.getPropertyValue('overflow-y')) ||
                           l.getPropertyValue('overflow')
-                      if ('auto' === i || 'scroll' === i) return r
+                      if ('auto' === a || 'scroll' === a) return r
                     }
                     return window
                   },
@@ -1634,8 +1754,8 @@
                         o = this._previousPosition,
                         r = this.props,
                         l = (r.debug, r.onPositionChange),
-                        i = r.onEnter,
-                        a = r.onLeave,
+                        a = r.onEnter,
+                        i = r.onLeave,
                         s = r.fireOnRapidScroll
                       if (((this._previousPosition = n), o !== n)) {
                         var c = {
@@ -1649,12 +1769,12 @@
                         }
                         l.call(this, c),
                           'inside' === n
-                            ? i.call(this, c)
-                            : 'inside' === o && a.call(this, c),
+                            ? a.call(this, c)
+                            : 'inside' === o && i.call(this, c),
                           s &&
                             (('below' === o && 'above' === n) ||
                               ('above' === o && 'below' === n)) &&
-                            (i.call(this, {
+                            (a.call(this, {
                               currentPosition: 'inside',
                               previousPosition: o,
                               event: e,
@@ -1663,7 +1783,7 @@
                               viewportTop: t.viewportTop,
                               viewportBottom: t.viewportBottom,
                             }),
-                            a.call(this, {
+                            i.call(this, {
                               currentPosition: n,
                               previousPosition: 'inside',
                               event: e,
@@ -1685,11 +1805,11 @@
                       o = n.horizontal,
                       r = (n.debug, this._ref.getBoundingClientRect()),
                       l = r.left,
-                      i = r.top,
-                      a = r.right,
+                      a = r.top,
+                      i = r.right,
                       s = r.bottom,
-                      c = o ? l : i,
-                      u = o ? a : s
+                      c = o ? l : a,
+                      u = o ? i : s
                     this.scrollableAncestor === window
                       ? ((e = o ? window.innerWidth : window.innerHeight),
                         (t = 0))
@@ -1700,13 +1820,13 @@
                           ? this.scrollableAncestor.getBoundingClientRect().left
                           : this.scrollableAncestor.getBoundingClientRect()
                               .top))
-                    var p = this.props,
-                      d = p.bottomOffset
+                    var f = this.props,
+                      m = f.bottomOffset
                     return {
                       waypointTop: c,
                       waypointBottom: u,
-                      viewportTop: t + f(p.topOffset, e),
-                      viewportBottom: t + e - f(d, e),
+                      viewportTop: t + p(f.topOffset, e),
+                      viewportBottom: t + e - p(m, e),
                     }
                   },
                 },
@@ -1716,7 +1836,7 @@
                     var e = this,
                       t = this.props.children
                     return t
-                      ? p(t) || Object(i.isForwardRef)(t)
+                      ? f(t) || Object(a.isForwardRef)(t)
                         ? l.a.cloneElement(t, {
                             ref: function(n) {
                               e.refElement(n),
@@ -1733,8 +1853,8 @@
                         })
                   },
                 },
-              ]) && a(r.prototype, d),
-              m && a(r, m),
+              ]) && i(r.prototype, m),
+              d && i(r, d),
               n
             )
           })(l.a.PureComponent)
@@ -1751,4 +1871,4 @@
     },
   },
 ])
-//# sourceMappingURL=component---src-pages-index-js-71d6f747e01447db255e.js.map
+//# sourceMappingURL=component---src-pages-index-js-4b74f16246335e843cd3.js.map
