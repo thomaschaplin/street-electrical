@@ -1,9 +1,12 @@
 module.exports = {
   siteMetadata: {
     title: 'Street Electrical',
-    author: 'Thomas Chaplin',
+    author: 'Philip Street',
     description: 'Professional Electrician Based In Essex',
+    url: "https://www.street-electrical.co.uk",
   },
+
+
   plugins: [
     'gatsby-plugin-react-helmet',
     {
@@ -20,5 +23,10 @@ module.exports = {
     },
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
-  ],
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-160028043-2',
+      }
+    }]
 }
