@@ -23,6 +23,12 @@ class Index extends React.Component {
     this.setState(() => ({ stickyNav: true }))
   }
 
+  handleChange = input => e => {
+    this.setState({
+      [input]: e.target.value,
+    })
+  }
+
   render() {
     return (
       <Layout>
@@ -150,28 +156,50 @@ class Index extends React.Component {
           <section id="cta" className="main special">
             <header className="major">
               <h2>Contact</h2>
-              <p>
-                We're available for a free no obligation quote 24 hours a day, 7
-                days a week!
-              </p>
+              <p>We're available for a free no obligation quote!</p>
             </header>
 
-            {/* <section class="main special">
+            <section class="main special">
               <h2>Contact Form</h2>
-              <form action="https://formspree.io/phil@street-electrical.co.uk" method="POST">
+              <form
+                action="https://formspree.io/phil@street-electrical.co.uk"
+                method="POST"
+              >
                 <div>
                   <div>
-                    <input required type="text" name="name" id="name" value="" placeholder="Your Name" />
+                    <input
+                      required
+                      type="text"
+                      name="name"
+                      id="name"
+                      value={this.state.name}
+                      placeholder="Your Name"
+                      onChange={this.handleChange('name')}
+                    />
                   </div>
                   <br />
                   <div>
-                    <input required type="email" name="email" id="email" value=""
-                      placeholder="Your Email" />
+                    <input
+                      required
+                      type="email"
+                      name="email"
+                      id="email"
+                      value={this.state.email}
+                      placeholder="Your Email"
+                      onChange={this.handleChange('email')}
+                    />
                   </div>
                   <br />
                   <div>
-                    <select name="category" id="category" required>
-                      <option value="">- Pick a category -</option>
+                    <select
+                      name="category"
+                      id="category"
+                      required
+                      onChange={this.handleChange('option')}
+                    >
+                      <option value={this.state.option}>
+                        - Pick a category -
+                      </option>
                       <option value="Lighting">Lighting</option>
                       <option value="Re-wiring">Re-wiring</option>
                       <option value="Sockets">Sockets</option>
@@ -180,19 +208,31 @@ class Index extends React.Component {
                   </div>
                   <br />
                   <div>
-                    <textarea required name="message" id="message" placeholder="Enter your message"
-                      rows="6"></textarea>
+                    <textarea
+                      required
+                      name="message"
+                      id="message"
+                      placeholder="Enter your message"
+                      rows="6"
+                      onChange={this.handleChange('message')}
+                    ></textarea>
                   </div>
                   <br />
                   <div>
                     <ul class="actions">
-                      <li><input type="submit" value="Send Message" class="primary" /></li>
-                      <li><input type="reset" value="Reset" /></li>
+                      <li>
+                        <input
+                          type="submit"
+                          value="Send Message"
+                          class="primary"
+                        />
+                      </li>
+                      {/* <li><input type="reset" value="Reset" onSubmit={this.resetValues()}/></li> */}
                     </ul>
                   </div>
                 </div>
               </form>
-            </section> */}
+            </section>
 
             <footer className="major">
               <ul class="icons">
