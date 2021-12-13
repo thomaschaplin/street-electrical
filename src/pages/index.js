@@ -145,10 +145,6 @@ class Index extends React.Component {
                 <span className="icon fa-laptop"></span>
                 <strong>Lighting</strong>
               </li>
-              <li className="style5">
-                <span className="icon fa-diamond"></span>
-                <strong>CCTV</strong>
-              </li>
             </ul>
             <footer className="major"></footer>
           </section>

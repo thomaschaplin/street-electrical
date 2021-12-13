@@ -30,12 +30,6 @@ const Footer = props => (
     <section>
       <h2>Contact Details</h2>
       <dl className="alt">
-        <dt>Address</dt>
-        <dd>
-          <a href="https://goo.gl/maps/XYSg5XsbCYexvQSx6" target="_blank">
-            18 Kingswood Crescent &bull; Rayleigh, Essex &bull; SS6 7BH
-          </a>
-        </dd>
         <dt>Phone</dt>
         <dd>
           <a href="tel:07896748201">07896748201</a>
